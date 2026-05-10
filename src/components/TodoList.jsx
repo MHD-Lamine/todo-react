@@ -1,7 +1,9 @@
-function TodoList() {
+function TodoList({ tasks }) {
   return (
     <ul>
-      <li>Première tâche</li>
+      {tasks.map((task) => (
+        <li key={task.id}>{task.text}</li>
+      ))}
     </ul>
   );
 }
