@@ -14,3 +14,47 @@ body {
 
   padding-top: 50px;
 }
+
+.app {
+  width: 400px;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.todo-input {
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.todo-input input {
+  flex: 1;
+
+  padding: 10px;
+}
+
+.todo-input button {
+  padding: 10px;
+}
+
+li {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}

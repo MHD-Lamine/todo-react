@@ -1,9 +1,16 @@
+import Header from "./components/Header";
+import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
+
+
 function App() {
 
   return (
-    <h1>
-      Todo React App
-    </h1>
+    <div className="app">
+      <Header />
+      <TodoInput />
+      <TodoList />
+    </div>
   );
 }
 
