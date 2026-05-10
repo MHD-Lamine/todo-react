@@ -1,8 +1,23 @@
-function TodoItem() {
+function TodoItem({
+  task,
+  deleteTask
+}) {
+
   return (
     <li>
-      <span>Tâche</span>
-      <button>❌</button>
+
+      <span>
+        {task.text}
+      </span>
+
+      <button
+        onClick={() =>
+          deleteTask(task.id)
+        }
+      >
+        ❌
+      </button>
+
     </li>
   );
 }

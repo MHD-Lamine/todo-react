@@ -23,13 +23,19 @@ function App() {
     setInput("");
   };
 
+  const deleteTask = (id) => {
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+
+    setTasks(updatedTasks);
+  };
+
   return (
     <div className="app">
       <Header />
 
       <TodoInput input={input} setInput={setInput} addTask={addTask} />
 
-      <TodoList tasks={tasks} />
+      <TodoList tasks={tasks} deleteTask={deleteTask} />
     </div>
   );
 }
