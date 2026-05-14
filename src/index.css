@@ -57,6 +57,7 @@ li {
   justify-content: space-between;
 
   margin-bottom: 10px;
+  animation: fadeIn 0.3s ease;
 }
 
 .task-content {
@@ -96,4 +97,81 @@ input[type="checkbox"] {
   padding: 8px 12px;
 
   cursor: pointer;
+}
+
+.task-text {
+  background: none;
+
+  border: none;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.dark {
+  background: #1e1e1e;
+
+  color: white;
+}
+.dark input {
+  background: #333;
+
+  color: white;
+
+  border-color: #555;
+}
+.dark li {
+  background: #2a2a2a;
+}
+.dark button {
+  background: #333;
+
+  color: white;
+}
+.dark li button {
+  background: crimson;
+}
+.theme-btn {
+  margin-bottom: 20px;
+
+  padding: 10px;
+
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+
+  .app {
+    width: 95%;
+  }
+
+  .todo-input {
+    flex-direction: column;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button:hover {
+  opacity: 0.9;
+
+  transform: translateY(-1px);
 }

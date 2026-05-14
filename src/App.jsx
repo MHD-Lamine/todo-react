@@ -31,6 +31,14 @@ function App() {
     }
   });
 
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode") === "true";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
+
   const remainingTasks = tasks.filter((task) => !task.done).length;
 
   const clearCompleted = () => {
@@ -90,9 +98,11 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className={darkMode ? "app dark" : "app"}>
       <Header />
-
+      <button className="theme-btn" onClick={() => setDarkMode(!darkMode)}>
+        {darkMode ? "☀️ Light" : "🌙 Dark"}
+      </button>
       <TodoInput input={input} setInput={setInput} addTask={addTask} />
 
       <TodoList
