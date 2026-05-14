@@ -76,3 +76,24 @@ li {
 input[type="checkbox"] {
   cursor: pointer;
 }
+
+.footer {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+.filters {
+  display: flex;
+
+  gap: 10px;
+}
+
+.filters button,
+.footer button {
+  padding: 8px 12px;
+
+  cursor: pointer;
+}
