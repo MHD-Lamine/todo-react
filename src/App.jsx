@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
+
 import { useState, useEffect } from "react";
 
 function App() {
@@ -73,6 +74,21 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  const updateTask = (id, newText) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          text: newText,
+        };
+      }
+
+      return task;
+    });
+
+    setTasks(updatedTasks);
+  };
+
   return (
     <div className="app">
       <Header />
@@ -83,6 +99,7 @@ function App() {
         tasks={filteredTasks}
         deleteTask={deleteTask}
         toggleTask={toggleTask}
+        updateTask={updateTask}
       />
       <div className="footer">
         <p>{remainingTasks} tâche(s) restante(s)</p>

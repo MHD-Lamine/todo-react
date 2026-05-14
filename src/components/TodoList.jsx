@@ -1,7 +1,7 @@
 import TodoItem from "./TodoItem";
 import PropTypes from "prop-types";
 
-function TodoList({ tasks, deleteTask, toggleTask }) {
+function TodoList({ tasks, deleteTask, toggleTask, updateTask }) {
   return (
     <ul>
       {tasks.map((task) => (
@@ -10,6 +10,7 @@ function TodoList({ tasks, deleteTask, toggleTask }) {
           task={task}
           deleteTask={deleteTask}
           toggleTask={toggleTask}
+          updateTask={updateTask}
         />
       ))}
     </ul>
@@ -36,5 +37,8 @@ TodoList.propTypes = {
 
   deleteTask: PropTypes.func.isRequired,
 
-  toggleTask: PropTypes.func.isRequired
+  toggleTask: PropTypes.func.isRequired, 
+
+    updateTask: PropTypes.func.isRequired
+
 };
