@@ -1,13 +1,20 @@
-import { useState } from "react";
-
 import Header from "./components/Header";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
 
   const [input, setInput] = useState("");
+
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    return savedTasks ?? [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = () => {
     if (!input.trim()) return;
