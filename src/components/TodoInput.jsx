@@ -1,3 +1,6 @@
+
+import PropTypes from "prop-types";
+
 function TodoInput({ input, setInput, addTask }) {
   return (
     <div className="todo-input">
@@ -14,3 +17,13 @@ function TodoInput({ input, setInput, addTask }) {
 }
 
 export default TodoInput;
+TodoInput.propTypes = {
+
+  input: PropTypes.string.isRequired,
+
+  setInput: PropTypes.func.isRequired,
+
+  addTask: PropTypes.func.isRequired
+
+};  
+

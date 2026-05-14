@@ -58,3 +58,21 @@ li {
 
   margin-bottom: 10px;
 }
+
+.task-content {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.done {
+  text-decoration: line-through;
+
+  opacity: 0.5;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
